@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { Image } from 'astro:assets'
+import BrandsSection from '../components/BrandsSection.astro';
+import Form from '../components/Form.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div class="">
+		<div class="absolute inset-0 block md:hidden bg-mobile-image bg-cover bg-center w-full"></div>
+		<!-- <div class="bg-midnight h-screen relative z-10 md:hidden">
+		</div> -->
+		<div class="relative z-20 w-[90%] mx-auto">
+			<header class=" flex justify-center mt-16 mb-14">
+				<Image 
+					src="/src/assets/desktop/logo.svg"
+					alt="Logo"
+					width="135" 
+					height="56"
+				/>
+			</header>
+	
+			<Form />
+			<div class="hidden md:block bg-tablet-image bg-cover bg-center w-1/2 h-full"></div>
+		</div>
+	</div>
 </Layout>
