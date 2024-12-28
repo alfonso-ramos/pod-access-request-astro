@@ -1,17 +1,36 @@
 ---
 import { Image } from 'astro:assets'
-import BrandsSection from '../components/BrandsSection.astro';
 import Form from '../components/Form.astro';
 import Layout from '../layouts/Layout.astro';
+import DottedPatterns from '../components/UI/DottedPatterns.astro';
 ---
 
 <Layout>
 	<div class="">
 		<div class="absolute inset-0 block md:hidden bg-mobile-image bg-cover bg-center w-full"></div>
+		<!-- Tablet Image -->
+		<div class="hidden md:block xl:hidden absolute top-0 right-0">
+			<Image 
+			src="/src/assets/tablet/image-host.jpg"
+			alt="Logo"
+			width="490" 
+			height="787"
+			/>
+		</div>
+		<!-- Desktop Image -->
+		<div class="hidden xl:block absolute top-3/2 right-0">
+			<Image 
+			src="/src/assets/desktop/image-host.jpg"
+			alt="Logo"
+			width="888" 
+			height="640"
+			/>
+		</div>
+		<!-- <div class="absolute hidden inset-0 md:block bg-tablet-image"></div> -->
 		<!-- <div class="bg-midnight h-screen relative z-10 md:hidden">
 		</div> -->
 		<div class="relative z-20 w-[90%] mx-auto">
-			<header class=" flex justify-center mt-16 mb-14">
+			<header class=" flex justify-center mt-16 mb-14 md:justify-start">
 				<Image 
 					src="/src/assets/desktop/logo.svg"
 					alt="Logo"
@@ -22,6 +41,9 @@ import Layout from '../layouts/Layout.astro';
 	
 			<Form />
 			<div class="hidden md:block bg-tablet-image bg-cover bg-center w-1/2 h-full"></div>
+		</div>
+		<div class="hidden md:block absolute md:left-0 lg:right-0 bottom-0 lg:bottom-6">
+			<DottedPatterns />
 		</div>
 	</div>
 </Layout>
