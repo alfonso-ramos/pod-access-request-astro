@@ -1,33 +1,67 @@
 ---
 import BrandsSection from "./BrandsSection.astro";
-
 ---
+
 <div class="flex flex-col justify-center md:bg-midnight md:max-w-[635px] md:pt-24 md:pr-10">
-    <h1 class="uppercase text-primary text-2xl text-center mb-4 md:text-left md:text-5xl ">Publish your podcast <span class="text-white">everywhere</span> </h1>
-    <p  class="text-gray-300 text-center md:text-left">
+    <h1 class="uppercase text-primary text-2xl text-center mb-4 md:text-left md:text-5xl">
+        Publish your podcast <span class="text-white">everywhere</span>
+    </h1>
+    <p class="text-gray-300 text-center md:text-left md:max-w-[445px] md:mt-[31px]">
         Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
     </p>
     <div class="block md:hidden">
         <BrandsSection />
     </div>
-    
 
-    <form class="flex flex-col space-y-3" action="">
-        <input 
+    <form
+        class="flex flex-col space-y-3 md:flex-row md:items-center md:space-y-0 md:bg-gray-500 md:rounded-full md:px-1 md:pl-3 md:h-[56px] md:max-w-[445px] md:mt-10"
+        id="email-form"
+    >
+        <input
             type="text"
+            id="email"
             placeholder="Email address"
-            class="w-full h-12 rounded-2xl bg-gray-500 text-gray-300 px-4"
-            >
-
-        <input 
-            type="submit" 
-            placeholder="Request Access"
-            class="w-full h-12 bg-primary font-semibold rounded-2xl"
-            >
+            class="w-full h-12 mb-2 rounded-full bg-gray-500 text-gray-300 px-4 md:p-0 md:pl-4 focus:outline-none"
+        />
+        <button
+            type="submit"
+            class="w-full h-12 bg-primary font-semibold rounded-full md:w-[162px] md:px-5 hover:bg-[#B3FFE2] transition-colors"
+        >
+            Request Access
+        </button>
     </form>
-
-    <div class="hidden md:block">
+    
+    <p id="message" class="mt-4 hidden text-sm md:block"></p>
+    
+    <div class="hidden md:block mt-4">
         <BrandsSection />
     </div>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('#email-form');
+            const emailInput = document.querySelector('#email');
+            const message = document.querySelector('#message');
+
+            const handleValidation = (event) => {
+                event.preventDefault();
+                const emailValue = emailInput?.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailValue) {
+                    message.textContent = "The field cannot be empty.";
+                    message.className = 'mt-4 text-sm text-red';
+                } else if (!emailRegex.test(emailValue)) {
+                    message.textContent = "Oops! Please check your email.";
+                    message.className = 'mt-4 text-sm text-red';
+                } else {
+                    message.textContent = "Valid email! Thank you.";
+                    message.className = 'mt-4 text-sm text-primary';
+                    emailInput.value = '';
+                }
+            };
+
+            form.addEventListener('submit', handleValidation);
+        });
+    </script>
 </div>

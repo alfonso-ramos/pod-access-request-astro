@@ -10,7 +10,8 @@ export default {
 				500: "#2C344B",
 				400: "#5A668A",
 				300: "#C2CBE5",
-			}
+			},
+			red: "#FB3E3E"
 		},
 		extend: {
 			backgroundImage: {
