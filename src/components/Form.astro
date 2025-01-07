@@ -2,11 +2,11 @@
 import BrandsSection from "./BrandsSection.astro";
 ---
 
-<div class="flex flex-col justify-center md:bg-midnight md:max-w-[635px] md:pt-24 md:pr-10">
+<div class="flex flex-col justify-center md:bg-midnight md:max-w-[635px] md:pt-24 md:px-10">
     <h1 class="uppercase text-primary text-2xl text-center mb-4 md:text-left md:text-5xl">
         Publish your podcast <span class="text-white">everywhere</span>
     </h1>
-    <p class="text-gray-300 text-center md:text-left md:max-w-[445px] md:mt-[31px]">
+    <p class="text-gray-300 font-extralight text-center md:text-left md:max-w-[445px] md:mt-[31px]">
         Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!
     </p>
     <div class="block md:hidden">
@@ -21,16 +21,16 @@ import BrandsSection from "./BrandsSection.astro";
             type="text"
             id="email"
             placeholder="Email address"
-            class="w-full h-12 mb-2 rounded-full bg-gray-500 text-gray-300 px-4 md:p-0 md:pl-4 focus:outline-none"
+            class="w-full h-12 mb-2 rounded-full bg-gray-500 text-gray-300 px-4 md:p-0 md:pl-4 md:m-0 focus:outline-none"
         />
         <button
             type="submit"
-            class="w-full h-12 bg-primary font-semibold rounded-full md:w-[162px] md:px-5 hover:bg-[#B3FFE2] transition-colors"
+            class="w-full h-12 bg-primary font-semibold rounded-full md:w-[252px] md:px-5 md:text-sm hover:bg-[#B3FFE2] transition-colors"
         >
             Request Access
         </button>
     </form>
-    
+
     <p id="message" class="mt-4 hidden text-sm md:block"></p>
     
     <div class="hidden md:block mt-4">
@@ -50,13 +50,13 @@ import BrandsSection from "./BrandsSection.astro";
 
                 if (!emailValue) {
                     message.textContent = "The field cannot be empty.";
-                    message.className = 'mt-4 text-sm text-red';
+                    message.className = 'mt-4 text-sm text-red text-center md:text-left md:ml-4';
                 } else if (!emailRegex.test(emailValue)) {
                     message.textContent = "Oops! Please check your email.";
-                    message.className = 'mt-4 text-sm text-red';
+                    message.className = 'mt-4 text-sm text-red text-center md:text-left md:ml-4';
                 } else {
                     message.textContent = "Valid email! Thank you.";
-                    message.className = 'mt-4 text-sm text-primary';
+                    message.className = 'mt-4 text-sm text-primary text-center md:text-left md:ml-4';
                     emailInput.value = '';
                 }
             };

@@ -7,7 +7,10 @@ import DottedPatterns from '../components/UI/DottedPatterns.astro';
 
 <Layout>
 	<div>
-		<div class="absolute inset-0 block md:hidden bg-mobile-image bg-cover bg-center w-full opacity-10"></div>
+		<!-- Mobile image -->
+		<div 
+			class="absolute inset-0 block md:hidden bg-mobile-image bg-cover bg-center w-full opacity-10"
+		></div>
 		<!-- Tablet Image -->
 		<div class="hidden md:block xl:hidden absolute top-0 right-0">
 			<Image 
@@ -26,9 +29,6 @@ import DottedPatterns from '../components/UI/DottedPatterns.astro';
 			height="640"
 			/>
 		</div>
-		<!-- <div class="absolute hidden inset-0 md:block bg-tablet-image"></div> -->
-		<!-- <div class="bg-midnight h-screen relative z-10 md:hidden">
-		</div> -->
 		<div class="relative z-20 w-[90%] mx-auto">
 			<header class=" flex justify-center mt-16 mb-14 md:justify-start">
 				<Image 
