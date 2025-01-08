@@ -15,9 +15,9 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				'mobile-image': "url('/src/assets/mobile/image-host.jpg')",
-				'tablet-image': "url('/src/assets/tablet/image-host.jpg')",
-				'desktop-image': "url('/src/assets/desktop/image-host.jpg')",
+				'mobile-image': "url('/assets/mobile/image-host.jpg')",
+				'tablet-image': "url('/assets/tablet/image-host.jpg')",
+				'desktop-image': "url('/assets/desktop/image-host.jpg')",
 			},
 		},
 	},
