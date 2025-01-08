@@ -49,7 +49,7 @@ import BrandsSection from "./BrandsSection.astro";
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (!emailValue) {
-                    message.textContent = "The field cannot be empty.";
+                    message.textContent = "Oops! Please add your email";
                     message.className = 'mt-4 text-sm text-red text-center md:text-left md:ml-4';
                 } else if (!emailRegex.test(emailValue)) {
                     message.textContent = "Oops! Please check your email.";
